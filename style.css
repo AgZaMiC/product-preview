@@ -1,0 +1,145 @@
+/* Tokens */
+:root {
+    --clr-black: #1C232B;
+    --clr-grey: #6C7289;
+    --clr-cream: #F2EAE2;
+    --clr-white: #FFFFFF;
+    --clr-green-500: #3D8168;
+    --clr-green-700: #1A4032;
+
+    --tp-serif: "Fraunces", serif;
+    --tp-sans: "Montserrat", sans-serif;
+
+    --tp1-size: 32px;
+    --tp2-size: 14px;
+    --tp3-size: 12px;
+    --tp4-size: 13px;
+
+    --radius: 8px;
+
+    --spc-50: 4px;
+    --spc-100: 8px;
+    --spc-200: 16px;
+    --spc-300: 24px;
+    --spc-400: 32px;
+    --spc-500: 40px;
+}
+
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: var(--tp-sans);
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: var(--tp2-size);
+    line-height: 1.6;
+    background-color: var(--clr-cream);
+    color: var(--clr-grey);
+}
+
+
+h1 {
+    font-family: var(--tp-serif);
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: var(--tp1-size);
+    line-height: 1;
+    font-variation-settings: "SOFT" 0, "WONK" 0;
+    color: var(--clr-black);
+}
+
+span {
+    letter-spacing: 5px;
+    font-size: var(--tp3-size);
+    line-height: 1.2;
+}
+
+picture,
+img {
+    max-width: 100%;
+    display: block;
+}
+
+strong {
+    font-size: var(--tp1-size);
+    color: var(--clr-green-500);
+    font-family: var(--tp-serif);
+    line-height: 1;
+}
+
+del {
+    font-size: var(--tp4-size);
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-white);
+    background-color: var(--clr-green-500);
+    padding: var(--spc-200);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: var(--spc-100);
+    justify-content: center;
+
+    &:hover {
+        background-color: var(--clr-green-700);
+    }
+}
+
+/* Block Styles */
+.card-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card {
+    max-width: 350px;
+    background-color: var(--clr-white);
+    border-radius: var(--radius);
+    overflow: hidden;
+
+    img {
+        height: 100%;
+    }
+
+    @media (min-width: 768px) {
+        max-width: 600px;
+        display: flex;
+
+        .card__image,
+        .card__content {
+            width: 50%;
+        }
+    }
+}
+
+.card__content {
+    padding: var(--spc-400);
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spc-300);
+}
+
+.card__title {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spc-300);
+}
+
+.card__price {
+    display: flex;
+    align-items: center;
+    column-gap: var(--spc-200);
+}
